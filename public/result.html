@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+<meta http-equiv="Content-type" content="text/html" charset="utf-8">
+<title>meta</title>
+<link rel='stylesheet' href='/stylesheets/result.css'><link>
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.validate.min.js"></script>
+<script type="text/javascript">
+$(function(){
+  $("form").validate({
+		rules: {
+			getobj_p :{
+				required: true,
+			},
+			getobj_f :{
+				required: true,
+			},
+			destroy :{
+				required: true,
+			},
+      retry :{
+        required: true,
+      },
+      invalid:{
+        required: true,
+      }
+		},
+		messages: {
+      getobj_p[0] :{
+				required: "入力漏れとか救いようがねーやつだな",
+			},
+			getobj_f :{
+				required: "入力漏れとか救いようがねーやつだな",
+			},
+			destroy :{
+				required: "入力漏れとか救いようがねーやつだな",
+			},
+      retry :{
+        required: "入力漏れとか救いようがねーやつだな",
+      },
+      invalid:{
+        required: "入力漏れとか救いようがねーやつだな",
+      }
+		}
+	});
+})
+</script>
+</head>
+
+<body>
+  <div id="content">
+    <h1>試合結果</h1><br>
+  </div>
+
+  <form method="POST", action="/result">
+    <div id="total">
+      (Vゴール達成時のみ記入)
+    <p>
+      チャイヨー: <input type="radio" id="vgoal" name="vgoal">
+      チャイヨータイム: <input type="text" id="vtime" name="vtime" size="5" maxlength="4">
+      <!--
+        TODO:
+      -->
+    </p>
+    </div>
+    <h3>(必須)</h3>
+      <p>
+        勝利チーム: <select name="winner">
+          <option value="team1">青チーム</option>
+          <option value="team2">赤チーム</option>
+        </select>
+      </p>
+    <br>
+    <div id="team1">
+      青チーム
+      <br>
+      受け渡しゾーンのオブジェクト: <input type="text" id="getobj_p" name="getobj_p" size="5" maxlength="3">
+      <br>
+      支配陣地内のオブジェクト: <input type="text" id="getobj_f" name="getobj_f" size="5" maxlength="3">
+      <br>
+      崩した回数: <input type="text" id="destroy" name="destroy" size="3" maxlength="1">
+      リトライ回数: <input type="text" id="retry" name="retry" size="3" maxlength="1">
+      違反回数: <input type="text" id="invalid" name="invalid" size="3" maxlength="1">
+      <br>
+    </div>
+    <div id="team2">
+      <br>
+      赤チーム
+      <br>
+      受け渡しゾーンのオブジェクト: <input type="text" id="getobj_p" name="getobj_p" size="5" maxlength="3">
+      <br>
+      支配陣地内のオブジェクト: <input type="text" id="getobj_f" name="getobj_f" size="5" maxlength="3">
+      <br>
+      崩した回数: <input type="text" id="destroy" name="destroy" size="3" maxlength="1">
+      リトライ回数: <input type="text" id="retry" name="retry" size="3" maxlength="1">
+      違反回数: <input type="text" id="invalid" name="invalid" size="3" maxlength="1">
+      <br>
+    </div>
+    <br>
+
+    <h4>縄張りゾーン</h4>
+    記入は blue or red, 積まれた個数 の順に行う
+    <br>例) b:<input type="radio" value="on"> r:<input type="radio"> <input type="text" size="1" value="4">
+    <table border=1>
+    <tr>
+    <td colspan="7">　　　　　　　　　　　自動機ゾーン側</td>
+  <!--
+    <td>商品名</td>
+    <td>数量</td>
+    <td>サイズ</td>
+    <td>単価(元)</td>
+    <td>備考(色等)</td>
+  -->
+    </tr>
+    <tr>
+    <td rowspan="3">青</td>
+    <td>b:<input type="checkbox" name="donatecolor" value="blue"> r:<input type="checkbox" name="donatecolor" value="red"> 　<input type="text" name="height" size="1"></td>
+    <td>b:<input type="checkbox" name="donatecolor" value="blue"> r:<input type="checkbox" name="donatecolor" value="red"> 　<input type="text" name="height" size="1"></td>
+    <td>b:<input type="checkbox" name="donatecolor" value="blue"> r:<input type="checkbox" name="donatecolor" value="red"> 　<input type="text" name="height" size="1"></td>
+    <td>b:<input type="checkbox" name="donatecolor" value="blue"> r:<input type="checkbox" name="donatecolor" value="red"> 　<input type="text" name="height" size="1"></td>
+    <td>b:<input type="checkbox" name="donatecolor" value="blue"> r:<input type="checkbox" name="donatecolor" value="red"> 　<input type="text" name="height" size="1"></td>
+    <td rowspan="3">赤</td>
+    </tr>
+    <tr>
+    <td>b:<input type="checkbox" name="donatecolor" value="blue"> r:<input type="checkbox" name="donatecolor" value="red"> 　<input type="text" name="height" size="1"></td>
+    <td>b:<input type="checkbox" name="donatecolor" value="blue"> r:<input type="checkbox" name="donatecolor" value="red"> 　<input type="text" name="height" size="1"></td>
+    <td>b:<input type="checkbox" name="donatecolor" value="blue"> r:<input type="checkbox" name="donatecolor" value="red"> 　<input type="text" name="height" size="1"></td>
+    <td>b:<input type="checkbox" name="donatecolor" value="blue"> r:<input type="checkbox" name="donatecolor" value="red"> 　<input type="text" name="height" size="1"></td>
+    <td>b:<input type="checkbox" name="donatecolor" value="blue"> r:<input type="checkbox" name="donatecolor" value="red"> 　<input type="text" name="height" size="1"></td>
+    </tr>
+    </table>
+
+    <br>
+    <br>
+    付加情報 <input type="text" id="comment" name="comment" size="40">
+    <br>
+    <input type="reset" value="リセット">
+    <input type="submit" value="提出">
+  </form>
+  <br>
+  <a href="/meta.html" target="_self">キャンセル</a>
+  <a href="/index.html" target="_self">トップ</a>
+  <br>
+</body>
+</html>

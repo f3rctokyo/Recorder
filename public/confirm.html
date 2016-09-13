@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=Shift_JIS">
+<title>index</title>
+<link rel='stylesheet' href='/stylesheets/style.css'><link>
+</head>
+
+<body>
+  <div id="content">
+    この試合結果はすでに入力されています<br>
+    上書きしますか？
+    <!--TODO: 記入済み項目の表示-->
+
+    <form method="POST", action="/confirm_ok">
+      はい: <input type="radio" id="conf" name="conf" value="ok">
+      いいえ: <input type="radio" id="conf" name="conf" value="ng">
+
+      <input type="submit" value="送信">
+    </form>
+  </div>
+  <a href="/meta.html" target="_self">いいえ</a>
+  <a href="/result.html" target="_self">はい</a>
+</body>
+</html>

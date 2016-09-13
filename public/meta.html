@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+<meta http-equiv="Content-type" content="text/html" charset="utf-8">
+<title>meta</title>
+<link rel='stylesheet' href='/stylesheets/style.css'><link>
+<script type="text/javascript" src="/javascripts/jquery.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.validate.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$("form").validate({
+		rules: {
+			matchnum :{
+				required: true,
+			},
+			matchreague :{
+				required: true
+			},
+			team1name :{
+				required: true
+			},
+      team2name :{
+        required: true
+      }
+		},
+		messages: {
+      matchnum :{
+				required: "入力漏れとか救いようがねーやつだな",
+			},
+			matchreague :{
+				required: "入力漏れとか救いようがねーやつだな"
+			},
+			team1name :{
+				required: "入力漏れとか救いようがねーやつだな"
+			},
+      team2name :{
+        required: "入力漏れとか救いようがねーやつだな"
+      }
+		}
+	});
+})
+</script>
+</head>
+
+<body>
+  <div id="content">
+    <h1>試合情報</h1><br>
+  </div>
+
+  <form method="POST", action="/metadata">
+    決勝: <input type="radio" id="matchtype" name="matchtype" value="final">
+    予選: <input type="radio" id="matchtype" name="matchtype" value="qualification">
+    <br>
+    試合番号 <input type="text" id="matchnum" name="matchnum" size="5" maxlength="3">
+    <br>
+    リーグ <input type="text" id="matchreague" name="matchreague" size="5" maxlength="3">
+    <br>
+    青 <input type="text" id="team1name" name="team1name" size="10"> VS 赤 <input type="text" id="team2name" name="team2name" size="10">
+    <br>
+    <br>
+    付加情報 <input type="text" id="comment" name="comment" size="40">
+    <br>
+    <input type="submit" value="試合結果を入力する">
+  </form>
+  <a href="/index.html" target="_self">top</a>
+  <br>
+</body>
+</html>

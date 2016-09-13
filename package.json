@@ -1,0 +1,9 @@
+{
+  "name": "F3RCRecorder",
+  "version": "0.0.1",
+  "description": "the server program which provides sheets for results of f3rc's matches",
+  "dependencies": {
+    "socket.io": "~0.9.6",
+    "mime": "~1.2.7"
+  }
+}
