@@ -8,38 +8,23 @@
 <script type="text/javascript" src="/javascripts/jquery.js"></script>
 <script type="text/javascript" src="/javascripts/jquery.validate.min.js"></script>
 <script type="text/javascript">
-$(function(){
-	$("form").validate({
-		rules: {
-			matchnum :{
-				required: true,
-			},
-			matchreague :{
-				required: true
-			},
-			team1name :{
-				required: true
-			},
-      team2name :{
-        required: true
-      }
-		},
-		messages: {
-      matchnum :{
-				required: "入力漏れとか救いようがねーやつだな",
-			},
-			matchreague :{
-				required: "入力漏れとか救いようがねーやつだな"
-			},
-			team1name :{
-				required: "入力漏れとか救いようがねーやつだな"
-			},
-      team2name :{
-        required: "入力漏れとか救いようがねーやつだな"
-      }
-		}
-	});
-})
+<!--
+function check() {
+	var flag = 0;
+
+	if (document.formmeta.matchnum.value == "") {
+		//試合番号のチェック
+		flag = 1;
+	}
+
+	if (flag) {
+		window.alert('必須項目に記入漏れがあります');
+		return false;
+	} else {
+		return true;
+	}
+}
+// -->
 </script>
 </head>
 
@@ -48,7 +33,7 @@ $(function(){
     <h1>試合情報</h1><br>
   </div>
 
-  <form method="POST", action="/metadata">
+  <form method="POST", action="/metadata" name="formmeta" onsubmit="return check()">
     決勝: <input type="radio" id="matchtype" name="matchtype" value="final">
     予選: <input type="radio" id="matchtype" name="matchtype" value="qualification">
     <br>
