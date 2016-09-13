@@ -8,44 +8,30 @@
 <script type="text/javascript" src="/javascripts/jquery.js"></script>
 <script type="text/javascript" src="/javascripts/jquery.validate.min.js"></script>
 <script type="text/javascript">
-$(function(){
-  $("form").validate({
-		rules: {
-			getobj_p :{
-				required: true,
-			},
-			getobj_f :{
-				required: true,
-			},
-			destroy :{
-				required: true,
-			},
-      retry :{
-        required: true,
-      },
-      invalid:{
-        required: true,
-      }
-		},
-		messages: {
-      getobj_p[0] :{
-				required: "入力漏れとか救いようがねーやつだな",
-			},
-			getobj_f :{
-				required: "入力漏れとか救いようがねーやつだな",
-			},
-			destroy :{
-				required: "入力漏れとか救いようがねーやつだな",
-			},
-      retry :{
-        required: "入力漏れとか救いようがねーやつだな",
-      },
-      invalid:{
-        required: "入力漏れとか救いようがねーやつだな",
-      }
-		}
-	});
-})
+<!--
+function checkresult() {
+  var flag_r = 0;
+
+  if (document.formresult.getobj_p.value[0] == "") {
+		flag_r = 1;
+	}/* else if (document.formresult.getobj_f.value == "") {
+		flag_r = 1;
+	} else if (document.formresult.destroy.value == "") {
+		flag_r = 1;
+	} else if (document.formresult.retry.value == "") {
+		flag_r = 1;
+	} else if (document.formresult.invalid.value == "") {
+		flag_r = 1;
+	}*/
+
+	if (flag_r) {
+		window.alert('必須項目に記入漏れがあります');
+		return false;
+	} else {
+		return true;
+	}
+}
+// -->
 </script>
 </head>
 
@@ -54,7 +40,7 @@ $(function(){
     <h1>試合結果</h1><br>
   </div>
 
-  <form method="POST", action="/result">
+  <form method="POST", action="/result" name="formresult" onsubmit="return checkresult()">
     <div id="total">
       (Vゴール達成時のみ記入)
     <p>

@@ -15,6 +15,12 @@ function check() {
 	if (document.formmeta.matchnum.value == "") {
 		//試合番号のチェック
 		flag = 1;
+	} else if (document.formmeta.matchreague.value == "") {
+		flag = 1;
+	} else if (document.formmeta.team1name.value == "") {
+		flag = 1;
+	} else if (document.formmeta.team2name.value == "") {
+		flag = 1;
 	}
 
 	if (flag) {
