@@ -2,8 +2,16 @@ body {
   font: 20px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+h1 {
+  text-align: center;
+}
+
 a {
   color: #0000AA;
+}
+
+#ref {
+  text-align: center;
 }
 
 form {

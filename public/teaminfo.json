@@ -1,10 +1,10 @@
 {
-  "A": [],
-  "B": ["D", "E", "F"],
-  "C": [],
-  "D": [],
-  "E": ["A", "B", "C"],
-  "F": ["A", "B", "C"],
-  "G": [],
-  "H": []
+  "A": ["Empereur", "HAIYORE!HATAHATASANN", "MIYAZAKI", "AutoMEIZI"],
+  "B": ["CHAHAN", "SerchDestroy", "KSSK", "Lisa"],
+  "C": ["Dhantei", "MINITOMYS", "KIKOUTAIB-Boys", "MUSASHI"],
+  "D": ["IKATUUN", "TeamT", "Splobotism", "KINZOKUNOHAGURUMA"],
+  "E": ["WhiteKIGYO", "Astonism", "HATARAITARAMAKE", "GINGATEIKOKUDAN"],
+  "F": ["TeamARARECHAN", "ANZENDAIITI", "NOA"],
+  "G": ["Unknown", "TeamHORIC", "ASNAKAWAIIYOhshs"],
+  "H": ["Blackness", "wwwww", "IRIGUCHI"]
 }

@@ -93,8 +93,8 @@ var server = http.createServer(function(req, res) {
       //console.log(typeof obj);
 
       var chaiyotime = parseInt(obj["vtime"].slice(0, 1)) * 60 + parseInt(obj["vtime"].slice(2));
-      var points_1 =-(parseInt(obj["destroy"][0]) * 50) + (parseInt(obj["getobj_p"][0]) * 10) + (parseInt(obj["getobj_f"][0]) * 10);
-      var points_2 = -(parseInt(obj["destroy"][1]) * 50) + (parseInt(obj["getobj_p"][1]) * 10) + (parseInt(obj["getobj_f"][1]) * 10);
+      var points_1 =-(parseInt(obj["destroy1"]) * 50) + (parseInt(obj["getobj_p1"]) * 10) + (parseInt(obj["getobj_f1"]) * 10);
+      var points_2 = -(parseInt(obj["destroy2"]) * 50) + (parseInt(obj["getobj_p2"]) * 10) + (parseInt(obj["getobj_f2"]) * 10);
 
       var ite = 0;
       var temp_dc = [];
